@@ -1,6 +1,21 @@
-export default function PauseCard({ icon, title, isFavorite, onToggleFavorite }) {
+export default function PauseCard({ icon, title, isFavorite, onToggleFavorite, onClick }) {
+  const handleCardClick = (e) => {
+    if (onClick) {
+      onClick();
+    }
+  };
+
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation(); // Prevent card click when clicking favorite
+    onToggleFavorite();
+  };
+
   return (
-    <article className="pause-card">
+    <article 
+      className={`pause-card ${onClick ? "clickable" : ""}`}
+      onClick={handleCardClick}
+      style={{ cursor: onClick ? "pointer" : "default" }}
+    >
       <div className="pause-iconBox">
         <img src={icon} alt={title} />
       </div>
@@ -11,7 +26,7 @@ export default function PauseCard({ icon, title, isFavorite, onToggleFavorite })
 
       <button
         className={`pause-favBtn ${isFavorite ? "active" : ""}`}
-        onClick={onToggleFavorite}
+        onClick={handleFavoriteClick}
         aria-label={isFavorite ? "Verwijder uit favorieten" : "Voeg toe aan favorieten"}
         type="button"
       >

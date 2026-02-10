@@ -8,11 +8,12 @@ import StatsCard from "./components/StatsCard1";
 import AdviceCard from "./components/AdviceCard";
 import ExerciseCard from "./components/ExerciseCard";
 import PauseSuggestions from "./components/PauseSuggestions";
+import BreathingExercises from "./components/BreathingExercises";
 
 export default function App() {
   const [name] = useState("John Doe");
 
-  const [currentPage, setCurrentPage] = useState("home"); // "home" | "pause"
+  const [currentPage, setCurrentPage] = useState("home"); // "home" | "pause" | "breathing"
 
   // Check-in
   const [stress, setStress] = useState(2);
@@ -50,8 +51,10 @@ export default function App() {
     <div className="app">
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-       {currentPage === "pause" ? (
-        <PauseSuggestions />
+      {currentPage === "breathing" ? (
+        <BreathingExercises onBack={() => setCurrentPage("pause")} />
+      ) : currentPage === "pause" ? (
+        <PauseSuggestions onNavigateToBreathing={() => setCurrentPage("breathing")} />
       ) : (
         <main className="page">
           <h1 className="greeting">Hallo {name},</h1>

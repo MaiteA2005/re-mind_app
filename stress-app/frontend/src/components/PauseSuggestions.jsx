@@ -27,7 +27,7 @@ const DATA = [
   { id: "visuals", type: "lang", title: "Relaxing visuals", icon: visuals },
 ];
 
-export default function PauseSuggestions() {
+export default function PauseSuggestions({ onNavigateToBreathing }) {
   const [tab, setTab] = useState("kort"); // "kort" | "lang" | "fav"
   const [favorites, setFavorites] = useState(() => new Set());
 
@@ -78,6 +78,7 @@ export default function PauseSuggestions() {
               icon={item.icon}
               title={item.title}
               isFavorite={isFav}
+              onClick={item.id === "breath" && onNavigateToBreathing ? onNavigateToBreathing : undefined}
               onToggleFavorite={() => {
                 setFavorites((prev) => {
                   const next = new Set(prev);
