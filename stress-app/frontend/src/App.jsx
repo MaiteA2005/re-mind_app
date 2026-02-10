@@ -7,9 +7,12 @@ import WorkTimerCard from "./components/WorkTimerCard";
 import StatsCard from "./components/StatsCard1";
 import AdviceCard from "./components/AdviceCard";
 import ExerciseCard from "./components/ExerciseCard";
+import PauseSuggestions from "./components/PauseSuggestions";
 
 export default function App() {
   const [name] = useState("John Doe");
+
+  const [currentPage, setCurrentPage] = useState("home"); // "home" | "pause"
 
   // Check-in
   const [stress, setStress] = useState(2);
@@ -45,48 +48,52 @@ export default function App() {
 
   return (
     <div className="app">
-      <Navbar />
-      <main className="page">
-        <h1 className="greeting">Hallo {name},</h1>
+      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-        <section className="section">
-          <h2 className="sectionTitle">Check in</h2>
+       {currentPage === "pause" ? (
+        <PauseSuggestions />
+      ) : (
+        <main className="page">
+          <h1 className="greeting">Hallo {name},</h1>
 
-          <div className="grid2">
-            <SliderCard
-              title="Hoe hoog is je stressniveau nu?"
-              value={stress}
-              onChange={setStress}
-              icon="📈"
-            />
-            <SliderCard
-              title="Wat is jouw energie level op dit moment?"
-              value={energy}
-              onChange={setEnergy}
-              icon="🔋"
-            />
-          </div>
-        </section>
+          <section className="section">
+            <h2 className="sectionTitle">Check in</h2>
 
-        <section className="section">
-          <WorkTimerCard />
-        </section>
+            <div className="grid2">
+              <SliderCard
+                title="Hoe hoog is je stressniveau nu?"
+                value={stress}
+                onChange={setStress}
+                icon="📈"
+              />
+              <SliderCard
+                title="Wat is jouw energie level op dit moment?"
+                value={energy}
+                onChange={setEnergy}
+                icon="🔋"
+              />
+            </div>
+          </section>
 
-        <section className="section">
-          <h2 className="sectionTitle">Stats van vandaag</h2>
-          <StatsCard stats={stats} />
-        </section>
+          <section className="section">
+            <WorkTimerCard />
+          </section>
 
-        <section className="section">
-          <h2 className="sectionTitle">Advies</h2>
-          <AdviceCard text={adviceText} />
-        </section>
+          <section className="section">
+            <h2 className="sectionTitle">Stats van vandaag</h2>
+            <StatsCard stats={stats} />
+          </section>
 
-        <section className="section">
-          <ExerciseCard />
-        </section>
-      </main>
+          <section className="section">
+            <h2 className="sectionTitle">Advies</h2>
+            <AdviceCard text={adviceText} />
+          </section>
+
+          <section className="section">
+            <ExerciseCard />
+          </section>
+        </main>
+      )}
     </div>
   );
-
 }

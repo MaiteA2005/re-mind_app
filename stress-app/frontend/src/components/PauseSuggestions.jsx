@@ -5,6 +5,7 @@ import PauseCard from "./PauseCard";
 import posture from "../assets/houdingCheck.png";
 import trophy from "../assets/nameOneWin.png";
 import drink from "../assets/drinkPauze.png";
+import handStretch from "../assets/handStretch.png";
 import chest from "../assets/handToChestReset.png";
 import eye from "../assets/oogReset.png";
 import lungs from "../assets/ademhaling.png";
@@ -15,7 +16,7 @@ import visuals from "../assets/relaxingVisuals.png";
 const DATA = [
   { id: "posture", type: "kort", title: "Houding check", icon: posture },
   { id: "win", type: "kort", title: "Name one win", icon: trophy },
-  { id: "handStretch", type: "kort", title: "Hand stretch", icon: hand },
+  { id: "handStretch", type: "kort", title: "Hand stretch", icon: handStretch },
   { id: "chest", type: "kort", title: "Hand to chest reset", icon: chest },
   { id: "drink2", type: "kort", title: "Drink pauze", icon: drink },
   { id: "eye", type: "kort", title: "Oog reset", icon: eye },

@@ -22,6 +22,9 @@
   display: flex;
   gap: 26px;
   align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .link { 
