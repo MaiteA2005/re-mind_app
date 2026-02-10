@@ -9,26 +9,26 @@ function formatTime(totalSeconds) {
 function CircleProgress({ progress = 0 }) {
   // progress: 0..1
   const size = 140;
-  const stroke = 10;
-  const r = (size - stroke) / 2;
-  const c = 2 * Math.PI * r;
-  const dash = c * (1 - Math.max(0, Math.min(1, progress)));
+  const stroke = 70;
+  const r = (size - stroke) / 2; // radius van de cirkel, rekening houdend met stroke
+  const c = 2 * Math.PI * r; // omtrek van de cirkel
+  const dash = c * (1 - Math.max(0, Math.min(1, progress))); 
 
   return (
     <svg width={size} height={size} aria-label="Timer progress">
-      <circle
+      <circle // dikke grijze cirkel
         cx={size / 2}
         cy={size / 2}
         r={r}
-        stroke="#222"
+        stroke="#eee"
         strokeWidth={stroke}
-        fill="#f3f3f3"
+        fill="#eee"
       />
-      <circle
+      <circle // dunne groene cirkel die de voortgang toont
         cx={size / 2}
         cy={size / 2}
         r={r}
-        stroke="#777"
+        stroke="#ccc"
         strokeWidth={stroke}
         fill="transparent"
         strokeDasharray={c}
@@ -36,14 +36,14 @@ function CircleProgress({ progress = 0 }) {
         transform={`rotate(-90 ${size / 2} ${size / 2})`}
       />
       {/* dunne “wijzer” */}
-      <line
+      {/* <line
         x1={size / 2}
         y1={size / 2}
         x2={size / 2}
         y2={size / 2 - r + 6}
-        stroke="#222"
+        stroke="#46696F"
         strokeWidth="2"
-      />
+      /> */}
     </svg>
   );
 }
@@ -57,7 +57,7 @@ export default function WorkTimerCard() {
   const [breakSeconds, setBreakSeconds] = useState(0);
 
   // Voor de cirkel: neem bijvoorbeeld een “dag” van 8 uur als referentie
-  const dayTargetSeconds = 8 * 60 * 60;
+  const dayTargetSeconds = 8 * 60; //*60
 
   useEffect(() => {
     let timer = null;
