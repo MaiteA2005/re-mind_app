@@ -250,6 +250,7 @@ a {
 
 .pause-favBtn.active {
   background: #d9d9d9;
+  color: #000;
 }
 
 /* Responsive */
@@ -375,6 +376,7 @@ a {
 
 .breathing-fav-btn.active {
   background: #d9d9d9;
+  color: #000;
 }
 
 /* Help button */
@@ -382,10 +384,11 @@ a {
   position: fixed;
   bottom: 40px;
   left: 40px;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+  padding: 0;
   border-radius: 999px;
-  border: 2px solid #2b2b2b;
+  border: 3px solid #2b2b2b;
   background: white;
   cursor: pointer;
   display: flex;
@@ -436,14 +439,13 @@ a {
 
 
 /* =========================
-   Breathing Exercise Detail
+  Breathing Exercise Detail
 ========================= */
 
 .exercise-detail-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 24px 100px;
-  min-height: 100vh;
+  padding: 20px 24px 20px;
   display: flex;
   flex-direction: column;
 }
@@ -490,6 +492,10 @@ a {
 }
 
 .exercise-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: #d9d9d9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -504,7 +510,7 @@ a {
   font-weight: 600;
   color: #2b2b2b;
   text-align: center;
-  padding: 20px
+  padding: 20px;
   transition: transform 4s ease-in-out;
 }
 
