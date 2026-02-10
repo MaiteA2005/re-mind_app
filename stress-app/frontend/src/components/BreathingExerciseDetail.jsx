@@ -134,10 +134,11 @@ export default function BreathingExerciseDetail({ exerciseId, onBack, onChangeMe
             </div>
 
             <button className="help-btn" aria-label="Help">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                {/* <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="2" />
                     <text x="16" y="22" textAnchor="middle" fontSize="18" fill="currentColor">?</text>
-                </svg>
+                </svg> */}
+                ?
             </button>
 
             <div className="exercise-footer">
