@@ -24,8 +24,15 @@
   align-items: center;
 }
 
-.link { font-weight: 700; opacity: 0.8; }
-.link.active { opacity: 1; text-decoration: underline; }
+.link { 
+    font-weight: 700; 
+    opacity: 0.8; 
+}
+
+.link.active { 
+    opacity: 1; 
+    text-decoration: underline; 
+}
 
 .profile {
   width: 38px;
