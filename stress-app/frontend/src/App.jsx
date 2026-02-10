@@ -9,11 +9,13 @@ import AdviceCard from "./components/AdviceCard";
 import ExerciseCard from "./components/ExerciseCard";
 import PauseSuggestions from "./components/PauseSuggestions";
 import BreathingExercises from "./components/BreathingExercises";
+import BreathingExerciseDetail from "./components/BreathingExerciseDetail";
 
 export default function App() {
   const [name] = useState("John Doe");
 
-  const [currentPage, setCurrentPage] = useState("home"); // "home" | "pause" | "breathing"
+  const [currentPage, setCurrentPage] = useState("home"); // "home" | "pause" | "breathing" | "exercise-detail"
+  const [selectedExercise, setSelectedExercise] = useState(null);
 
   // Check-in
   const [stress, setStress] = useState(2);
@@ -51,8 +53,20 @@ export default function App() {
     <div className="app">
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-      {currentPage === "breathing" ? (
-        <BreathingExercises onBack={() => setCurrentPage("pause")} />
+      {currentPage === "exercise-detail" ? (
+        <BreathingExerciseDetail 
+          exerciseId={selectedExercise} 
+          onBack={() => setCurrentPage("breathing")}
+          onChangeMethod={() => setCurrentPage("breathing")}
+        />
+      ) : currentPage === "breathing" ? (
+        <BreathingExercises 
+          onBack={() => setCurrentPage("pause")} 
+          onSelectExercise={(id) => {
+            setSelectedExercise(id);
+            setCurrentPage("exercise-detail");
+          }}
+        />
       ) : currentPage === "pause" ? (
         <PauseSuggestions onNavigateToBreathing={() => setCurrentPage("breathing")} />
       ) : (

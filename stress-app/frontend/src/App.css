@@ -169,6 +169,7 @@ a {
   background: #ffffff;
   cursor: pointer;
   font-size: 15px;
+  color: #000;
 }
 
 .pause-tab.active {
@@ -315,6 +316,7 @@ a {
   cursor: pointer;
   font-size: 15px;
   font-weight: 500;
+  color: #000;
 }
 
 .filter-btn.active {
@@ -380,8 +382,8 @@ a {
   position: fixed;
   bottom: 40px;
   left: 40px;
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   border-radius: 999px;
   border: 2px solid #2b2b2b;
   background: white;
@@ -389,6 +391,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #111;
+  font-size: 32px;
 }
 
 .help-btn:hover {
@@ -406,6 +410,17 @@ a {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* Clickable breathing card */
+.breathing-card.clickable {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.breathing-card.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .breathing-grid {
@@ -416,5 +431,164 @@ a {
 @media (max-width: 480px) {
   .breathing-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
+   Breathing Exercise Detail
+========================= */
+
+.exercise-detail-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.exercise-controls {
+  display: flex;
+  gap: 24px;
+}
+
+.control-btn {
+  padding: 12px 48px;
+  border-radius: 999px;
+  border: 1.5px solid #9a9a9a;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  transition: all 0.2s;
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.control-btn:not(:disabled):hover {
+  background: #f0f0f0;
+}
+
+.exercise-circle-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.exercise-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  transition: transform 4s ease-in-out;
+}
+
+.exercise-circle.active {
+  animation: breathe 8s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.exercise-info {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.exercise-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.exercise-steps {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+.exercise-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  margin-top: auto;
+}
+
+.change-method-btn {
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: 1.5px solid #9a9a9a;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.change-method-btn:hover {
+  background: #f0f0f0;
+}
+
+.exercise-indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
+
+.indicator.active {
+  background: #6b6b6b;
+}
+
+@media (max-width: 768px) {
+  .exercise-detail-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .exercise-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .control-btn {
+    flex: 1;
+    padding: 12px 24px;
+  }
+
+  .exercise-circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .exercise-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .change-method-btn {
+    width: 100%;
   }
 }
