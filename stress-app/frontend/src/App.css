@@ -136,3 +136,131 @@ a {
   background: #fff;
   max-width: 900px;
 }
+
+
+/* =========================
+   Pauzesuggesties pagina
+========================= */
+
+.pause-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.pause-page h1 {
+  text-align: center;
+  font-size: 32px;
+  margin: 0 0 28px 0;
+}
+
+/* Tabs */
+.pause-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 46px;
+}
+
+.pause-tab {
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: 1.5px solid #9a9a9a;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.pause-tab.active {
+  background: #d9d9d9;
+  border-color: #d9d9d9;
+}
+
+/* Grid */
+.pause-grid {
+  display: grid;
+  gap: 34px;
+  justify-content: center;
+}
+
+.pause-grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+}
+
+.pause-grid.cols-2 {
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+}
+
+/* Card */
+.pause-card {
+  position: relative;
+  display: flex;
+  border: 1.5px solid #2b2b2b;
+  border-radius: 18px;
+  overflow: hidden;
+  background: white;
+  min-height: 120px;
+}
+
+.pause-iconBox {
+  width: 120px;
+  background: #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pause-iconBox img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.pause-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.pause-content h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Favorite button */
+.pause-favBtn {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1.5px solid #2b2b2b;
+  background: #e1e1e1;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pause-favBtn.active {
+  background: #d9d9d9;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .pause-grid.cols-3 {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .pause-grid.cols-3,
+  .pause-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+}

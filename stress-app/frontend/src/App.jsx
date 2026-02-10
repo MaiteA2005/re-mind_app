@@ -41,10 +41,11 @@ export default function App() {
     return "Je stress en energie zijn momenteel in balans. Probeer dit ritme vast te houden en neem regelmatig korte pauzes.";
   }, [stress, energy]);
 
+  
+
   return (
     <div className="app">
       <Navbar />
-
       <main className="page">
         <h1 className="greeting">Hallo {name},</h1>
 
@@ -87,4 +88,5 @@ export default function App() {
       </main>
     </div>
   );
+
 }
