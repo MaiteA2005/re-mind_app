@@ -16,7 +16,7 @@ export default function Navbar() {
         </nav>
 
         <button className="profile" aria-label="Profiel">
-          👤
+          
         </button>
       </div>
     </header>
