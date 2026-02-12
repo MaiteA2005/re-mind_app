@@ -1,30 +1,10 @@
 import { useMemo, useState } from "react";
 import PauseCard from "./PauseCard";
 
-// Vervang icon paths door jouw echte icons in src/assets
-import posture from "../assets/houdingCheck.png";
-import trophy from "../assets/nameOneWin.png";
-import drink from "../assets/drinkPauze.png";
-import handStretch from "../assets/handStretch.png";
-import chest from "../assets/handToChestReset.png";
-import eye from "../assets/oogReset.png";
 import lungs from "../assets/ademhaling.png";
-import stretch from "../assets/stretchen.png";
-import walk from "../assets/korteWandeling.png";
-import visuals from "../assets/relaxingVisuals.png";
 
 const DATA = [
-  { id: "posture", type: "kort", title: "Houding check", icon: posture },
-  { id: "win", type: "kort", title: "Name one win", icon: trophy },
-  { id: "handStretch", type: "kort", title: "Hand stretch", icon: handStretch },
-  { id: "chest", type: "kort", title: "Hand to chest reset", icon: chest },
-  { id: "drink2", type: "kort", title: "Drink pauze", icon: drink },
-  { id: "eye", type: "kort", title: "Oog reset", icon: eye },
-
   { id: "breath", type: "lang", title: "Ademhaling", icon: lungs },
-  { id: "stretch", type: "lang", title: "Stretchen", icon: stretch },
-  { id: "walk", type: "lang", title: "Korte wandeling", icon: walk },
-  { id: "visuals", type: "lang", title: "Relaxing visuals", icon: visuals },
 ];
 
 export default function PauseSuggestions({ onNavigateToBreathing }) {

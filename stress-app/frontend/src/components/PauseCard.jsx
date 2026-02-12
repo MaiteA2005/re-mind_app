@@ -6,7 +6,7 @@ export default function PauseCard({ icon, title, isFavorite, onToggleFavorite, o
   };
 
   const handleFavoriteClick = (e) => {
-    e.stopPropagation(); // Prevent card click when clicking favorite
+    e.stopPropagation(); // Voorkom dat de card click event ook getriggerd wordt
     onToggleFavorite();
   };
 

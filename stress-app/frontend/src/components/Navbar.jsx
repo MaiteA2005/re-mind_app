@@ -5,7 +5,7 @@ export default function Navbar({ currentPage, setCurrentPage }) {
     <header className="nav">
       <div className="navInner">
         <div className="brand">
-          <span className="brandMark">Re:Mind</span>
+          <span className="brandMark">Logo</span>
         </div>
 
         <nav className="links">
