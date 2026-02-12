@@ -10,7 +10,7 @@ import BreathingExerciseDetail from "./components/BreathingExerciseDetail";
 export default function App() {
   const [name] = useState("John Doe");
 
-  const [currentPage, setCurrentPage] = useState("home"); // "home" | "pause" | "breathing" | "exercise-detail"
+  const [currentPage, setCurrentPage] = useState("home"); 
   const [selectedExercise, setSelectedExercise] = useState(null);
   
 
